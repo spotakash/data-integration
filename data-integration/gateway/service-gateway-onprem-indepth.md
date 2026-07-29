@@ -42,9 +42,16 @@ A stored credential is used to connect from the gateway to on-premises data sour
 
 You sign in with either a work account or a school account. This account is your organization account. If you signed up for an Office 365 offering and didn't supply your actual work email address, your account name might look like `nancy@contoso.onmicrosoft.com`. A cloud service stores your account within a tenant in Microsoft Entra ID. In most cases, the User Principal Name (UPN) of your Microsoft Entra ID account matches your email address.
 
-## Network traffic security
+## Network Traffic Security
 
-Traffic goes from the gateway to Azure Relay to the Power BI backend cluster. By using Azure ExpressRoute, you can make sure this traffic doesn't traverse the public internet. All Azure internal traffic goes over the Azure backbone.
+Traffic flows from the on-premises data gateway through Azure Relay to the Power BI backend cluster. When Azure ExpressRoute is used, this communication can be routed without traversing the public internet, leveraging the Microsoft global network and Azure backbone for improved security and reliability.
+
+> [!NOTE]
+> The connectivity flow depends on the ExpressRoute peering model deployed and the selected network architecture pattern.
+>
+> By default, Power BI and other Microsoft Online Services communicate over **[ExpressRoute Microsoft Peering](https://learn.microsoft.com/azure/expressroute/expressroute-faqs?#microsoft-peering)**. Therefore, organisations requiring private connectivity to Power BI should plan and configure Microsoft Peering as part of their ExpressRoute deployment strategy.
+>
+> If **ExpressRoute Private Peering** is preferred or mandated by organisational policy, additional architectural considerations may be required. A common design pattern is to deploy an enterprise proxy within an Azure Virtual Network, allowing the on-premises data gateway to communicate with Power BI services through the proxy over the private ExpressRoute connection. The appropriate architecture should be evaluated based on the organisation's security, connectivity, and operational requirements.
 
 ## Microsoft Entra ID
 
