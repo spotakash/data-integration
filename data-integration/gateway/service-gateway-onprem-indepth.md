@@ -49,9 +49,9 @@ Traffic flows from the on-premises data gateway through Azure Relay to the Power
 > [!NOTE]
 > The connectivity flow depends on the ExpressRoute peering model deployed and the selected network architecture pattern.
 >
-> By default, Power BI and other Microsoft Online Services communicate over **[ExpressRoute Microsoft Peering](https://learn.microsoft.com/azure/expressroute/expressroute-faqs?#microsoft-peering)**. Therefore, organisations requiring private connectivity to Power BI should plan and configure Microsoft Peering as part of their ExpressRoute deployment strategy.
+> By default, Power BI and other Microsoft Online Services communicate over **[ExpressRoute Microsoft Peering](https://learn.microsoft.com/azure/expressroute/expressroute-faqs#microsoft-peering)**. Therefore, organizations requiring private connectivity to Power BI should plan and configure Microsoft Peering as part of their ExpressRoute deployment strategy.
 >
-> If **ExpressRoute Private Peering** is preferred or mandated by organisational policy, additional architectural considerations may be required. A common design pattern is to deploy an enterprise proxy within an Azure Virtual Network, allowing the on-premises data gateway to communicate with Power BI services through the proxy over the private ExpressRoute connection. The appropriate architecture should be evaluated based on the organisation's security, connectivity, and operational requirements.
+> If **ExpressRoute Private Peering** is preferred or mandated by organizational policy, additional architectural considerations may be required. A common design pattern is to deploy an enterprise proxy within an Azure Virtual Network, allowing the on-premises data gateway to communicate with Power BI services through the proxy over the private ExpressRoute connection. The appropriate architecture should be evaluated based on the organization's security, connectivity, and operational requirements.
 
 ## Microsoft Entra ID
 
